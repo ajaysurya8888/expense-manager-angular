@@ -1,19 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import {ExpenseEntry} from '../expense-entry';
-@Component({
-  selector: 'app-expense-entry-list',
-  templateUrl: './expense-entry-list.component.html',
-  styleUrls: ['./expense-entry-list.component.css']
-})
-export class ExpenseEntryListComponent implements OnInit {
-  title!: string;
-  expenseEntries!: ExpenseEntry[];
-  constructor() { }
- 
-  ngOnInit(): void {
-    this.title = "Expense Entry List"; 
-    this.expenseEntries = this.getExpenseEntries();
-  }
+import { Component, OnInit } from '@angular/core'; 
+import { ExpenseEntry } from '../expense-entry'; 
+import { DebugService } from '../debug.service'; 
+@Component({ 
+  selector: 'app-expense-entry-list', 
+  templateUrl: './expense-entry-list.component.html', styleUrls: ['./expense-entry-list.component.css'],
+  providers: [DebugService]
+}) 
+export class ExpenseEntryListComponent implements OnInit { 
+  title!: string; 
+  expenseEntries!: ExpenseEntry[]; 
+  constructor(private debugService: DebugService) { } 
+  ngOnInit() { 
+     this.debugService.info("Expense Entry List component initialized"); 
+     this.title = "Expense Entry List"; 
+     this.expenseEntries = this.getExpenseEntries(); 
+  } 
   getExpenseEntries() : ExpenseEntry[] { 
     let mockExpenseEntries : ExpenseEntry[] = [ 
        { id: 1, 

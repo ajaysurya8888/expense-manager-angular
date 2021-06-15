@@ -18,19 +18,11 @@ export class ExpenseEntryService {
    constructor(private httpClient : HttpClient) { } 
 
    getExpenseEntries() : Observable<any> {
-      return this.httpClient.get(this.expenseRestUrl, this.httpOptions)
-      .pipe(
-         retry(3),
-         catchError(this.httpErrorHandler)
-      );
+      return this.httpClient.get(this.expenseRestUrl, this.httpOptions).pipe(retry(3),catchError(this.httpErrorHandler));
    }
 
    getExpenseEntry(id: number) : Observable<any> {
-      return this.httpClient.get(this.expenseRestUrl + "/" + id, this.httpOptions)
-      .pipe(
-         retry(3),
-         catchError(this.httpErrorHandler)
-      );
+      return this.httpClient.get(this.expenseRestUrl + "/" + id, this.httpOptions).pipe(retry(3),catchError(this.httpErrorHandler));
    }
 
    private httpErrorHandler (error: HttpErrorResponse) {

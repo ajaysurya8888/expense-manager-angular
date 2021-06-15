@@ -7,9 +7,10 @@
     <div class="col-sm" style="text-align: left;">
     {{ title }}
     </div>
-    <div class="col-sm" style="text-align: right;">
-    <button type="button" class="btn btn-primary">Edit</button>
-    </div>
+    <div class="col-sm" style="text-align: right;"> 
+        <button type="button" class="btn btn-primary" (click)="goToList()">Go to List</button>  
+        <button type="button" class="btn btn-primary">Edit</button> 
+     </div>
     </div>
     </div>
     <div class="container box" style="margin-top: 10px;">
@@ -52,6 +53,7 @@
 <div class="col" style="text-align: left;">
 {{ expenseEntry.spendOn }}
 </div>
+
 </div>
 </div>
 </div>

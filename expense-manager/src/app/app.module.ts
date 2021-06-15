@@ -6,6 +6,7 @@ import { ExpenseEntryComponent } from './expense-entry/expense-entry.component';
 import { ExpenseEntryListComponent } from './expense-entry-list/expense-entry-list.component';
 import { DebugComponent } from './debug/debug.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
